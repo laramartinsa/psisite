@@ -10,13 +10,23 @@ import Resources from "./onepirate/Resources";
 import Groups from "./onepirate/Groups";
 import NotFound404 from "./onepirate/404";
 import Floating from "./onepirate/modules/components/Floating";
-import ReactPixel from 'react-facebook-pixel'; // Importe o ReactPixel
+import ReactPixel from 'react-facebook-pixel'; 
+import ReactGA from "react-ga4";
+
 
 function App() {
+  
+  React.useEffect(() => {
+    // Inicialize o Pixel do Meta com seu ID
+    ReactGA.initialize('AW-16515472425');
+  }, []); // Garante que isso só seja executado uma vez
+
+
   React.useEffect(() => {
     // Inicialize o Pixel do Meta com seu ID
     ReactPixel.init('397619074247878');
   }, []); // Garante que isso só seja executado uma vez
+
 
   return (
     <React.Fragment>
